@@ -17,7 +17,7 @@ public:
     static std::tuple<vector<string>, int, string, string> null_task(const std::string&);
 
 
-private:
+
     static std::vector<std::vector<int>> parse_string_to_matrix(const std::string&);
 
     // Функция для определения степени вершины в графе
@@ -37,6 +37,11 @@ private:
 
     // Функция для проверки, является ли граф полным двудольным
     static bool isCompleteBipartite(const vector<vector<int>>& adjacencyMatrix);
+
+
+
+    // Функция для рисования графа
+    static void draw_graph(const vector<vector<int>>& matrix);
 
 };
 

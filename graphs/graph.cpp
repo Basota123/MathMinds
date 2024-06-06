@@ -1,5 +1,19 @@
 #include "graph.h"
 #include <sstream>
+#include <QInputDialog>
+#include <QIntValidator>
+#include <QFrame>
+#include <QVBoxLayout>
+#include <QString>
+#include <QPlainTextEdit>
+#include <QLineEdit>
+#include <QVBoxLayout>
+#include <QGraphicsView>
+#include <QGraphicsScene>
+#include <QGraphicsEllipseItem>
+#include <QGraphicsLineItem>
+#include <string>
+
 
 /*
  * Система предлагает пользователю задать граф матрицей смежности (или матрицей инцидентности или списками смежности)
@@ -51,6 +65,20 @@ std::tuple<vector<string>, int, string, string> graph::null_task(const std::stri
 
     return ans;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 vector<vector<int>> graph::parse_string_to_matrix(const std::string& input)
 {
@@ -189,4 +217,52 @@ bool graph::isCompleteBipartite(const vector<vector<int>>& adjacencyMatrix)
         }
     }
     return true; // Граф полный двудольный
+}
+
+void graph::draw_graph(const vector<vector<int>>& matrix)
+{
+    QGraphicsScene* scene = new QGraphicsScene();
+
+    // Создаем вершины на углах квадрата
+    vector<QGraphicsEllipseItem*> vertices;
+    int sideLength = 200; // Длина стороны квадрата
+    QPointF center(150, 150); // Центр квадрата
+    for (size_t i = 0; i < matrix.size(); ++i)
+    {
+        double angle = 2 * M_PI * i / matrix.size(); // Угол для расположения вершин
+        double x = center.x() + sideLength / 2 * cos(angle);
+        double y = center.y() + sideLength / 2 * sin(angle);
+
+        QGraphicsEllipseItem* vertex = new QGraphicsEllipseItem(x, y, 20, 20);
+        vertex->setBrush(QBrush(Qt::red));
+        scene->addItem(vertex);
+        vertices.push_back(vertex);
+    }
+
+    // Создаем рёбра
+    for (size_t i = 0; i < matrix.size(); ++i)
+        for (size_t j = i + 1; j < matrix[i].size(); ++j)
+            if (matrix[i][j] == 1)
+            {
+                QGraphicsLineItem* edge = new QGraphicsLineItem(vertices[i]->rect().center().x(),
+                                                                vertices[i]->rect().center().y(),
+                                                                vertices[j]->rect().center().x(),
+                                                                vertices[j]->rect().center().y());
+                edge->setPen(QPen(Qt::black, 2));
+                scene->addItem(edge);
+
+                // Добавляем ребро в обратном направлении, чтобы учесть обоюдное соединение вершин
+                QGraphicsLineItem* reverseEdge = new QGraphicsLineItem(vertices[j]->rect().center().x(),
+                                                                       vertices[j]->rect().center().y(),
+                                                                       vertices[i]->rect().center().x(),
+                                                                       vertices[i]->rect().center().y());
+                reverseEdge->setPen(QPen(Qt::black, 2));
+                scene->addItem(reverseEdge);
+            }
+
+
+
+    QGraphicsView* view = new QGraphicsView(scene);
+    view->resize(300, 300);
+    view->show();
 }

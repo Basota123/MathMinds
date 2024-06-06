@@ -6,8 +6,16 @@
 #include <QVBoxLayout>
 #include <QString>
 #include <QPlainTextEdit>
+#include <QLineEdit>
+#include <QVBoxLayout>
+#include <QGraphicsView>
+#include <QGraphicsScene>
+#include <QGraphicsEllipseItem>
+#include <QGraphicsLineItem>
 #include <string>
 #include "graph.h"
+
+
 
 // string for solving null task
 //QString* g_matrix;
@@ -24,6 +32,7 @@ Null_task::~Null_task()
 {
     delete ui;
 }
+
 
 void Null_task::on_send_matrix_clicked()
 {
@@ -52,6 +61,10 @@ void Null_task::on_send_matrix_clicked()
     output->append(isBipartite + "\n");
 
     ui->textEdit->setText(*output);
+
+    auto matrix = graph::parse_string_to_matrix(input->toStdString());
+    graph::draw_graph(matrix);
+
 }
 
 

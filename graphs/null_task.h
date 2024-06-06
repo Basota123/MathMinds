@@ -2,6 +2,9 @@
 #define NULL_TASK_H
 
 #include <QWidget>
+#include <vector>
+
+using std::vector;
 
 namespace Ui {
 class Null_task;
@@ -24,7 +27,6 @@ private slots:
 
 private:
     Ui::Null_task *ui;
-
 
 };
 

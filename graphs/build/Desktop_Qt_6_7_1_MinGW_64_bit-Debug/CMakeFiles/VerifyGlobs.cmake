@@ -43,6 +43,7 @@ file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "D:/pantich/graphs/*.cpp")
 set(OLD_GLOB
   "D:/pantich/graphs/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/CMakeFiles/3.27.7/CompilerIdCXX/CMakeCXXCompilerId.cpp"
   "D:/pantich/graphs/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/graphs_autogen/EWIEGA46WW/moc_first_task.cpp"
+  "D:/pantich/graphs/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/graphs_autogen/EWIEGA46WW/moc_graphwidget.cpp"
   "D:/pantich/graphs/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/graphs_autogen/EWIEGA46WW/moc_mainwindow.cpp"
   "D:/pantich/graphs/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/graphs_autogen/EWIEGA46WW/moc_null_task.cpp"
   "D:/pantich/graphs/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/graphs_autogen/EWIEGA46WW/moc_windowforfirsttask.cpp"
