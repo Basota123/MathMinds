@@ -17,6 +17,8 @@ public:
 
 private slots:
     void on_send_matrix_clicked();
+    void on_clear_button_clicked();
+    void setup();
 
 private:
     Ui::Sixth_task *ui;

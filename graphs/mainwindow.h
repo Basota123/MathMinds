@@ -27,6 +27,8 @@ private slots:
 
     void on_fifth_task_button_clicked();
 
+    void on_sixth_task_button_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
