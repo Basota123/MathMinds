@@ -35,6 +35,10 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         ${PROJECT_SOURCES}
         null_task.h null_task.cpp null_task.ui
         graph.h graph.cpp
+        first_task.h first_task.cpp first_task.ui
+        fifth_task.h fifth_task.cpp fifth_task.ui
+        sixth_task.h sixth_task.cpp sixth_task.ui
+
 
 
 

@@ -1,0 +1,14 @@
+# ninja log v5
+5	246	7393963689280752	D:/pantich/graphs/build/Desktop_Qt_6_7_1_MinGW_64_bit-Release/CMakeFiles/cmake.verify_globs	5e17bd3cc4597d92
+2	727	7393958636830495	D:/pantich/graphs/build/Desktop_Qt_6_7_1_MinGW_64_bit-Release/graphs_autogen/timestamp	682654605defc5aa
+2	727	7393958636830495	graphs_autogen/timestamp	682654605defc5aa
+2	727	7393958636830495	graphs_autogen/mocs_compilation.cpp	682654605defc5aa
+2	727	7393958636830495	D:/pantich/graphs/build/Desktop_Qt_6_7_1_MinGW_64_bit-Release/graphs_autogen/mocs_compilation.cpp	682654605defc5aa
+731	3160	7393958661670555	CMakeFiles/graphs.dir/main.cpp.obj	c8a20f6dc3e5d895
+728	3141	7393958661330512	CMakeFiles/graphs.dir/graphs_autogen/mocs_compilation.cpp.obj	43132dbd91cf5bba
+730	3342	7393958663490528	CMakeFiles/graphs.dir/mainwindow.cpp.obj	f6ea0eeb5c660da1
+729	3918	7393958669250512	CMakeFiles/graphs.dir/null_task.cpp.obj	fd19def395896ada
+731	4488	7393958674960491	CMakeFiles/graphs.dir/graph.cpp.obj	3cc4d7431bfa5a4a
+4489	4664	7393958676670493	graphs.exe	da5b896303b41674
+246	991	7393963697795328	build.ninja	eaa6c144f7ff56d7
+4	215	0	D:/pantich/graphs/build/Desktop_Qt_6_7_1_MinGW_64_bit-Release/CMakeFiles/cmake.verify_globs	5e17bd3cc4597d92

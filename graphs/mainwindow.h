@@ -22,8 +22,10 @@ public:
 
 private slots:
     void on_exit_from_application_triggered();
-
     void on_null_task_button_clicked();
+    void on_first_task_button_clicked();
+
+    void on_fifth_task_button_clicked();
 
 private:
     Ui::MainWindow *ui;

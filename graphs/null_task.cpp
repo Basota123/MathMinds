@@ -25,6 +25,11 @@ Null_task::Null_task(QWidget *parent) : QWidget(parent), ui(new Ui::Null_task)
 {
     ui->setupUi(this);
     ui->textEdit->setReadOnly(true);
+
+    // ui->clear_button->setStyleSheet("QPushButton { border-radius: 10px; }");
+    // ui->send_matrix->setStyleSheet("QPushButton { border-radius: 10px; }");
+    // ui->plainTextEdit->setStyleSheet("QPlainTextEdit { border-radius: 10px; }");
+    // ui->textEdit->setStyleSheet("QTextEdit { border-radius: 10px; }");
 }
 
 

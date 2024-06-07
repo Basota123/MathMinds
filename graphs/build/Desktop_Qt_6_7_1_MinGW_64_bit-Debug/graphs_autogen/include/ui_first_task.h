@@ -11,6 +11,10 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QPlainTextEdit>
+#include <QtWidgets/QPushButton>
+#include <QtWidgets/QTextEdit>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -18,12 +22,47 @@ QT_BEGIN_NAMESPACE
 class Ui_First_task
 {
 public:
+    QPushButton *clear_button;
+    QPlainTextEdit *plainTextEdit;
+    QLabel *label;
+    QTextEdit *textEdit;
+    QLabel *label_2;
+    QPushButton *send_matrix;
 
     void setupUi(QWidget *First_task)
     {
         if (First_task->objectName().isEmpty())
             First_task->setObjectName("First_task");
-        First_task->resize(486, 470);
+        First_task->resize(742, 660);
+        clear_button = new QPushButton(First_task);
+        clear_button->setObjectName("clear_button");
+        clear_button->setGeometry(QRect(120, 320, 80, 24));
+        QFont font;
+        font.setPointSize(11);
+        clear_button->setFont(font);
+        plainTextEdit = new QPlainTextEdit(First_task);
+        plainTextEdit->setObjectName("plainTextEdit");
+        plainTextEdit->setGeometry(QRect(250, 30, 231, 141));
+        label = new QLabel(First_task);
+        label->setObjectName("label");
+        label->setGeometry(QRect(250, 0, 231, 31));
+        QFont font1;
+        font1.setPointSize(12);
+        font1.setBold(true);
+        label->setFont(font1);
+        textEdit = new QTextEdit(First_task);
+        textEdit->setObjectName("textEdit");
+        textEdit->setGeometry(QRect(40, 360, 641, 191));
+        label_2 = new QLabel(First_task);
+        label_2->setObjectName("label_2");
+        label_2->setGeometry(QRect(60, 310, 301, 41));
+        QFont font2;
+        font2.setPointSize(14);
+        font2.setBold(true);
+        label_2->setFont(font2);
+        send_matrix = new QPushButton(First_task);
+        send_matrix->setObjectName("send_matrix");
+        send_matrix->setGeometry(QRect(540, 570, 111, 31));
 
         retranslateUi(First_task);
 
@@ -33,6 +72,10 @@ public:
     void retranslateUi(QWidget *First_task)
     {
         First_task->setWindowTitle(QCoreApplication::translate("First_task", "Form", nullptr));
+        clear_button->setText(QCoreApplication::translate("First_task", "\320\236\321\207\320\270\321\201\321\202\320\270\321\202\321\214", nullptr));
+        label->setText(QCoreApplication::translate("First_task", "\320\222\320\262\320\265\320\264\320\270\321\202\320\265 \320\274\320\260\321\202\321\200\320\270\321\206\321\203 \321\201\320\274\320\265\320\266\320\275\320\276\321\201\321\202\320\270", nullptr));
+        label_2->setText(QCoreApplication::translate("First_task", "\320\236\321\202\320\262\320\265\321\202", nullptr));
+        send_matrix->setText(QCoreApplication::translate("First_task", "\320\236\321\202\320\277\321\200\320\260\320\262\320\270\321\202\321\214", nullptr));
     } // retranslateUi
 
 };

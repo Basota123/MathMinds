@@ -313,6 +313,18 @@
 	"DEP_FILE_RULE_NAME" : "graphs_autogen/timestamp",
 	"HEADERS" : 
 	[
+		[
+			"D:/pantich/graphs/fifth_task.h",
+			"MU",
+			"EWIEGA46WW/moc_fifth_task.cpp",
+			null
+		],
+		[
+			"D:/pantich/graphs/first_task.h",
+			"MU",
+			"EWIEGA46WW/moc_first_task.cpp",
+			null
+		],
 		[ "D:/pantich/graphs/graph.h", "MU", "EWIEGA46WW/moc_graph.cpp", null ],
 		[
 			"D:/pantich/graphs/mainwindow.h",
@@ -324,6 +336,12 @@
 			"D:/pantich/graphs/null_task.h",
 			"MU",
 			"EWIEGA46WW/moc_null_task.cpp",
+			null
+		],
+		[
+			"D:/pantich/graphs/sixth_task.h",
+			"MU",
+			"EWIEGA46WW/moc_sixth_task.cpp",
 			null
 		]
 	],
@@ -398,10 +416,13 @@
 	"SETTINGS_FILE" : "D:/pantich/graphs/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/CMakeFiles/graphs_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[ "D:/pantich/graphs/fifth_task.cpp", "MU", null ],
+		[ "D:/pantich/graphs/first_task.cpp", "MU", null ],
 		[ "D:/pantich/graphs/graph.cpp", "MU", null ],
 		[ "D:/pantich/graphs/main.cpp", "MU", null ],
 		[ "D:/pantich/graphs/mainwindow.cpp", "MU", null ],
-		[ "D:/pantich/graphs/null_task.cpp", "MU", null ]
+		[ "D:/pantich/graphs/null_task.cpp", "MU", null ],
+		[ "D:/pantich/graphs/sixth_task.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],

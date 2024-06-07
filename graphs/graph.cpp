@@ -13,7 +13,10 @@
 #include <QGraphicsEllipseItem>
 #include <QGraphicsLineItem>
 #include <string>
-
+#include <random>
+#include <cmath>
+#include <iomanip>
+#include <experimental/random>
 
 /*
  * Система предлагает пользователю задать граф матрицей смежности (или матрицей инцидентности или списками смежности)
@@ -225,7 +228,7 @@ void graph::draw_graph(const vector<vector<int>>& matrix)
 
     // Создаем вершины на углах квадрата
     vector<QGraphicsEllipseItem*> vertices;
-    int sideLength = 200; // Длина стороны квадрата
+    int sideLength = 300; // Длина стороны квадрата
     QPointF center(150, 150); // Центр квадрата
     for (size_t i = 0; i < matrix.size(); ++i)
     {
@@ -263,6 +266,144 @@ void graph::draw_graph(const vector<vector<int>>& matrix)
 
 
     QGraphicsView* view = new QGraphicsView(scene);
-    view->resize(300, 300);
+    view->resize(500, 500);
     view->show();
 }
+
+
+
+std::vector<std::vector<int>> graph::generateAdjacencyMatrix()
+{
+    srand(time(0)); // Инициализация генератора случайных чисел
+    int size = rand() % 4 + 2; // Генерируем случайный размер матрицы от 2 до 5
+    std::vector<std::vector<int>> matrix(size, std::vector<int>(size, 0)); // Создаем матрицу и заполняем ее нулями
+
+    // Заполняем матрицу случайными значениями 0 и 1
+    for (int i = 0; i < size; i++) {
+        for (int j = 0; j < size; j++) {
+            matrix[i][j] = rand() % 2;
+        }
+    }
+
+    return matrix;
+}
+
+string graph::matrix_to_string(const vector<vector<int>>& matrix)
+{
+    std::stringstream ss;
+
+    // Определение ширины столбцов
+    int max_width = 0;
+    for (const auto& row : matrix) {
+        for (int val : row) {
+            max_width = std::max(max_width, static_cast<int>(std::to_string(val).length()));
+        }
+    }
+
+    // Формирование строки таблицы
+    for (const auto& row : matrix) {
+        for (int val : row) {
+            ss << std::setw(max_width) << val << " ";
+        }
+        ss << std::endl;
+    }
+
+    return ss.str();
+}
+
+
+
+
+
+// Функция кодирования Прюфера
+vector<int> graph::prufer_encode(const unordered_map<int, vector<int>>& tree)
+{
+    int n = tree.size();
+    vector<int> code;
+    unordered_map<int, int> degree;
+
+    // Инициализируем степени вершин
+    for (const auto& [node, neighbors] : tree) {
+        degree[node] = neighbors.size();
+    }
+
+    while (code.size() < n - 2) {
+        // Находим вершину с наименьшей степенью, которая не является корнем
+        int min_degree = n;
+        int min_node = -1;
+        for (const auto& [node, deg] : degree) {
+            if (deg == 1 && node != 0) {  // 0 - предположительное корневое значение
+                min_degree = deg;
+                min_node = node;
+                break;
+            }
+        }
+
+        // Удаляем вершину с наименьшей степенью
+        int neighbor = tree.at(min_node)[0];
+        degree[min_node]--;
+        degree[neighbor]--;
+
+        // Добавляем в код соседнюю вершину
+        code.push_back(neighbor);
+    }
+
+    return code;
+}
+
+// Функция декодирования Прюфера
+// unordered_map<int, vector<int>> graph::prufer_decode(const vector<int>& code, int n)
+// {
+//     unordered_map<int, vector<int>> tree;
+//     unordered_map<int, int> degree;
+
+//     // Инициализируем степени вершин
+//     for (int i = 0; i < n; ++i) {
+//         degree[i] = 1;
+//     }
+
+//     // Увеличиваем степень для всех вершин в коде Прюфера
+//     for (int node : code) {
+//         degree[node]++;
+//     }
+
+//     // Находим корневую вершину
+//     int root = 0;
+//     for (int i = 0; i < n; ++i) {
+//         if (degree[i] == 1) {
+//             root = i;
+//             break;
+//         }
+//     }
+
+//     // Восстанавливаем дерево
+//     queue<int, vector<int>> q(code);
+//     for (int i = 0; i < n - 2; ++i) {
+//         int node = q.front();
+//         q.pop();
+
+//         // Находим соседнюю вершину с degree == 1
+//         for (int j = 0; j < n; ++j) {
+//             if (degree[j] == 1 && j != node) {
+//                 tree[node].push_back(j);
+//                 tree[j].push_back(node);
+//                 degree[node]--;
+//                 degree[j]--;
+//                 break;
+//             }
+//         }
+//     }
+
+//     // Соединяем корень с последними двумя вершинами
+//     for (int i = 0; i < n; ++i) {
+//         if (degree[i] == 1 && i != root) {
+//             tree[root].push_back(i);
+//             tree[i].push_back(root);
+//             break;
+//         }
+//     }
+
+//     return tree;
+// }
+
+

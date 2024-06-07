@@ -36,7 +36,7 @@ public:
         Null_task->resize(701, 647);
         label = new QLabel(Null_task);
         label->setObjectName("label");
-        label->setGeometry(QRect(240, 20, 231, 31));
+        label->setGeometry(QRect(240, 0, 231, 31));
         QFont font;
         font.setPointSize(12);
         font.setBold(true);
@@ -56,7 +56,7 @@ public:
         label_2->setFont(font1);
         plainTextEdit = new QPlainTextEdit(Null_task);
         plainTextEdit->setObjectName("plainTextEdit");
-        plainTextEdit->setGeometry(QRect(240, 50, 231, 141));
+        plainTextEdit->setGeometry(QRect(240, 30, 231, 141));
         clear_button = new QPushButton(Null_task);
         clear_button->setObjectName("clear_button");
         clear_button->setGeometry(QRect(110, 320, 80, 24));

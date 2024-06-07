@@ -5,11 +5,13 @@
 #include <vector>
 #include <queue>
 #include <tuple>
+#include <unordered_map>
 
 using std::tuple;
 using std::vector;
 using std::string;
 using std::queue;
+using std::unordered_map;
 
 class graph
 {
@@ -38,10 +40,19 @@ public:
     // Функция для проверки, является ли граф полным двудольным
     static bool isCompleteBipartite(const vector<vector<int>>& adjacencyMatrix);
 
-
-
     // Функция для рисования графа
     static void draw_graph(const vector<vector<int>>& matrix);
+
+    // Функция кодирования Прюфера
+    static vector<int> prufer_encode(const unordered_map<int, vector<int>>& tree);
+
+    // Функция декодирования Прюфера
+    static unordered_map<int, vector<int>> prufer_decode(const vector<int>& code, int n);
+
+    // Функция генерации случайной матрицы смежности
+    static std::vector<std::vector<int>> generateAdjacencyMatrix();
+
+    static string matrix_to_string(const vector<vector<int>>& matrix);
 
 };
 

@@ -33,7 +33,7 @@ public:
     QPushButton *pushButton_3;
     QPushButton *pushButton_4;
     QPushButton *pushButton_5;
-    QPushButton *pushButton_6;
+    QPushButton *fifth_task_button;
     QPushButton *pushButton_7;
     QPushButton *pushButton_8;
     QPushButton *pushButton_9;
@@ -72,9 +72,9 @@ public:
         pushButton_5 = new QPushButton(centralwidget);
         pushButton_5->setObjectName("pushButton_5");
         pushButton_5->setGeometry(QRect(640, 70, 101, 81));
-        pushButton_6 = new QPushButton(centralwidget);
-        pushButton_6->setObjectName("pushButton_6");
-        pushButton_6->setGeometry(QRect(760, 70, 101, 81));
+        fifth_task_button = new QPushButton(centralwidget);
+        fifth_task_button->setObjectName("fifth_task_button");
+        fifth_task_button->setGeometry(QRect(760, 70, 101, 81));
         pushButton_7 = new QPushButton(centralwidget);
         pushButton_7->setObjectName("pushButton_7");
         pushButton_7->setGeometry(QRect(890, 70, 101, 81));
@@ -113,7 +113,7 @@ public:
         pushButton_3->setText(QCoreApplication::translate("MainWindow", "\320\222\321\202\320\276\321\200\320\260\321\217 \320\267\320\260\320\264\320\260\321\207\320\260", nullptr));
         pushButton_4->setText(QCoreApplication::translate("MainWindow", "\320\242\321\200\320\265\321\202\321\214\321\217 \320\227\320\260\320\264\320\260\321\207\320\260", nullptr));
         pushButton_5->setText(QCoreApplication::translate("MainWindow", "\320\247\320\265\321\202\320\262\320\265\321\200\321\202\320\260\321\217 \320\267\320\260\320\264\320\260\321\207\320\260", nullptr));
-        pushButton_6->setText(QCoreApplication::translate("MainWindow", "\320\237\321\217\321\202\320\260\321\217 \320\267\320\260\320\264\320\260\321\207\320\260", nullptr));
+        fifth_task_button->setText(QCoreApplication::translate("MainWindow", "\320\237\321\217\321\202\320\260\321\217 \320\267\320\260\320\264\320\260\321\207\320\260", nullptr));
         pushButton_7->setText(QCoreApplication::translate("MainWindow", "\320\250\320\265\321\201\321\202\320\260\321\217 \320\267\320\260\320\264\320\260\321\207\320\260", nullptr));
         pushButton_8->setText(QCoreApplication::translate("MainWindow", "\320\241\320\265\320\264\321\214\320\274\320\260\321\217 \320\267\320\260\320\264\320\260\321\207\320\260", nullptr));
         pushButton_9->setText(QCoreApplication::translate("MainWindow", "\320\222\320\276\321\201\321\214\320\274\320\260\321\217 \320\267\320\260\320\264\320\260\321\207\320\260", nullptr));

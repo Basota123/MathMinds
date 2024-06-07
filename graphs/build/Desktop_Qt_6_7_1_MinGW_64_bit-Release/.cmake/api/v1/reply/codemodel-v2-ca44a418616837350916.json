@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Release-ba37b898632d7ea99af3.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "graphs",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "graphs::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-graphs-Release-7d431c00b56ebbb34e7b.json",
+					"name" : "graphs",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "graphs_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-graphs_autogen-Release-9e218d0557262c634483.json",
+					"name" : "graphs_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "graphs_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-graphs_autogen_timestamp_deps-Release-4e0cdd744d9e9a116c47.json",
+					"name" : "graphs_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/pantich/graphs/build/Desktop_Qt_6_7_1_MinGW_64_bit-Release",
+		"source" : "D:/pantich/graphs"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}
