@@ -124,7 +124,7 @@
      <string>Шестая задача</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_8">
+   <widget class="QPushButton" name="seventh_task_button">
     <property name="geometry">
      <rect>
       <x>1020</x>

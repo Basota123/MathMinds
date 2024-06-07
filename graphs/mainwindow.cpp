@@ -4,6 +4,8 @@
 #include "first_task.h"
 #include "fifth_task.h"
 #include "sixth_task.h"
+#include "seventh_task.h"
+
 
 MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWindow)
 {
@@ -55,5 +57,13 @@ void MainWindow::on_sixth_task_button_clicked()
     Sixth_task* sixth_task_widget = new Sixth_task();
     sixth_task_widget->setWindowTitle("Шестая задача");
     sixth_task_widget->show();
+}
+
+
+void MainWindow::on_seventh_task_button_clicked()
+{
+    Seventh_task* seventh_task_widget = new Seventh_task();
+    seventh_task_widget->setWindowTitle("Седьмая задача");
+    seventh_task_widget->show();
 }
 

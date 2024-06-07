@@ -47,6 +47,7 @@ set(OLD_GLOB
   "D:/pantich/graphs/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/graphs_autogen/EWIEGA46WW/moc_graphwidget.cpp"
   "D:/pantich/graphs/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/graphs_autogen/EWIEGA46WW/moc_mainwindow.cpp"
   "D:/pantich/graphs/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/graphs_autogen/EWIEGA46WW/moc_null_task.cpp"
+  "D:/pantich/graphs/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/graphs_autogen/EWIEGA46WW/moc_seventh_task.cpp"
   "D:/pantich/graphs/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/graphs_autogen/EWIEGA46WW/moc_sixth_task.cpp"
   "D:/pantich/graphs/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/graphs_autogen/EWIEGA46WW/moc_windowforfirsttask.cpp"
   "D:/pantich/graphs/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/graphs_autogen/mocs_compilation.cpp"
@@ -61,6 +62,7 @@ set(OLD_GLOB
   "D:/pantich/graphs/mainwindow.cpp"
   "D:/pantich/graphs/null_task.cpp"
   "D:/pantich/graphs/qcustomplot.cpp"
+  "D:/pantich/graphs/seventh_task.cpp"
   "D:/pantich/graphs/sixth_task.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
@@ -84,6 +86,7 @@ set(OLD_GLOB
   "D:/pantich/graphs/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/graphs_autogen/include/ui_first_task.h"
   "D:/pantich/graphs/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/graphs_autogen/include/ui_mainwindow.h"
   "D:/pantich/graphs/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/graphs_autogen/include/ui_null_task.h"
+  "D:/pantich/graphs/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/graphs_autogen/include/ui_seventh_task.h"
   "D:/pantich/graphs/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/graphs_autogen/include/ui_sixth_task.h"
   "D:/pantich/graphs/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/graphs_autogen/include/ui_windowforfirsttask.h"
   "D:/pantich/graphs/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/graphs_autogen/moc_predefs.h"
@@ -96,6 +99,7 @@ set(OLD_GLOB
   "D:/pantich/graphs/mainwindow.h"
   "D:/pantich/graphs/null_task.h"
   "D:/pantich/graphs/qcustomplot.h"
+  "D:/pantich/graphs/seventh_task.h"
   "D:/pantich/graphs/sixth_task.h"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
@@ -200,6 +204,7 @@ set(OLD_GLOB
   "D:/pantich/graphs/first_task.ui"
   "D:/pantich/graphs/mainwindow.ui"
   "D:/pantich/graphs/null_task.ui"
+  "D:/pantich/graphs/seventh_task.ui"
   "D:/pantich/graphs/sixth_task.ui"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")

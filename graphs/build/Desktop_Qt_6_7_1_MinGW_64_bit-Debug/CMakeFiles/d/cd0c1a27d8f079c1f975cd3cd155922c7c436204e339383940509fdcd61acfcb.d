@@ -620,6 +620,9 @@ graphs_autogen/timestamp: \
   D:/pantich/graphs/null_task.cpp \
   D:/pantich/graphs/null_task.h \
   D:/pantich/graphs/null_task.ui \
+  D:/pantich/graphs/seventh_task.cpp \
+  D:/pantich/graphs/seventh_task.h \
+  D:/pantich/graphs/seventh_task.ui \
   D:/pantich/graphs/sixth_task.cpp \
   D:/pantich/graphs/sixth_task.h \
   D:/pantich/graphs/sixth_task.ui

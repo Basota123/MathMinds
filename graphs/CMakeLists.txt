@@ -38,9 +38,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         first_task.h first_task.cpp first_task.ui
         fifth_task.h fifth_task.cpp fifth_task.ui
         sixth_task.h sixth_task.cpp sixth_task.ui
-
-
-
+        seventh_task.h seventh_task.cpp seventh_task.ui
 
     )
 # Define target properties for Android with Qt 6 as:

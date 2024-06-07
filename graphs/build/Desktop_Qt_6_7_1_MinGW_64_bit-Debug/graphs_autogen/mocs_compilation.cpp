@@ -3,4 +3,5 @@
 #include "EWIEGA46WW/moc_first_task.cpp"
 #include "EWIEGA46WW/moc_mainwindow.cpp"
 #include "EWIEGA46WW/moc_null_task.cpp"
+#include "EWIEGA46WW/moc_seventh_task.cpp"
 #include "EWIEGA46WW/moc_sixth_task.cpp"

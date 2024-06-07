@@ -6,12 +6,16 @@
 #include <queue>
 #include <tuple>
 #include <unordered_map>
+#include <QGraphicsEllipseItem>
+
 
 using std::tuple;
 using std::vector;
 using std::string;
 using std::queue;
 using std::unordered_map;
+
+struct Edge;
 
 class graph
 {
@@ -43,6 +47,9 @@ public:
     // Функция для рисования графа
     static void draw_graph(const vector<vector<int>>& matrix);
 
+    // Функция для покраски графа
+    static void color_vertices(const std::vector<QGraphicsEllipseItem*>& vertices, const std::vector<std::vector<int>>& matrix);
+
     // Функция кодирования Прюфера
     static vector<int> prufer_encode(const unordered_map<int, vector<int>>& tree);
 
@@ -52,7 +59,19 @@ public:
     // Функция генерации случайной матрицы смежности
     static std::vector<std::vector<int>> generateAdjacencyMatrix();
 
+    // Функции для построения минимального остовного дерева (алгоритм Прима)
+    // Задача 7
+    static std::vector<Edge> build_minimum_spanning_tree(const std::vector<std::vector<int>>& matrix);
+    static void draw_minimum_spanning_tree(const std::vector<std::vector<int>>& matrix, const std::vector<Edge>& mstEdges);
+
+    // Функция для поиска кратчайших путей от заданной вершины до остальных
+    // Задача 8
+    static vector<int> dijkstra(const vector<vector<Edge>>& graph, int startVertex);
+
+
+
     static string matrix_to_string(const vector<vector<int>>& matrix);
+
 
 };
 
@@ -63,6 +82,21 @@ struct Vertex
     bool visited;
 
     friend class graph;
+};
+
+struct Edge
+{
+    int source;
+    int destination;
+    int weight;
+
+    Edge(int src, int dest, int w) : source(src), destination(dest), weight(w) {}
+
+    // Сортировка ребер по весу
+    bool operator<(const Edge& other) const { return weight > other.weight; }// Сортировка по убыванию веса
+
+    friend class graph;
+
 };
 
 

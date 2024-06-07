@@ -339,6 +339,12 @@
 			null
 		],
 		[
+			"D:/pantich/graphs/seventh_task.h",
+			"MU",
+			"EWIEGA46WW/moc_seventh_task.cpp",
+			null
+		],
+		[
 			"D:/pantich/graphs/sixth_task.h",
 			"MU",
 			"EWIEGA46WW/moc_sixth_task.cpp",
@@ -422,6 +428,7 @@
 		[ "D:/pantich/graphs/main.cpp", "MU", null ],
 		[ "D:/pantich/graphs/mainwindow.cpp", "MU", null ],
 		[ "D:/pantich/graphs/null_task.cpp", "MU", null ],
+		[ "D:/pantich/graphs/seventh_task.cpp", "MU", null ],
 		[ "D:/pantich/graphs/sixth_task.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],

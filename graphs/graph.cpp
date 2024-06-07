@@ -1,5 +1,6 @@
 #include "graph.h"
 #include <sstream>
+#include <limits>
 #include <QInputDialog>
 #include <QIntValidator>
 #include <QFrame>
@@ -17,6 +18,11 @@
 #include <cmath>
 #include <iomanip>
 #include <experimental/random>
+
+using std::pair;
+using std::priority_queue;
+using std::greater;
+
 
 /*
  * Система предлагает пользователю задать граф матрицей смежности (или матрицей инцидентности или списками смежности)
@@ -263,13 +269,59 @@ void graph::draw_graph(const vector<vector<int>>& matrix)
                 scene->addItem(reverseEdge);
             }
 
-
+    graph::color_vertices(vertices, matrix);
 
     QGraphicsView* view = new QGraphicsView(scene);
     view->resize(500, 500);
     view->show();
 }
 
+void graph::color_vertices(const std::vector<QGraphicsEllipseItem*>& vertices, const std::vector<std::vector<int>>& matrix)
+{
+    std::vector<QColor> colors = {Qt::blue, Qt::green, Qt::yellow, Qt::cyan, Qt::magenta}; // Список цветов для раскраски
+    std::vector<int> vertexColors(vertices.size(), -1); // Массив цветов вершин (-1 - не покрашена)
+
+    // Алгоритм жадного раскрашивания с дополнительной проверкой на цвета соседей
+    for (size_t i = 0; i < vertices.size(); ++i) {
+        // Ищем допустимый цвет для вершины
+        bool foundColor = false;
+        for (size_t colorIndex = 0; colorIndex < colors.size() && !foundColor; ++colorIndex) {
+            // Проверяем, что этот цвет не используется у соседних вершин
+            bool validColor = true;
+            for (size_t j = 0; j < vertices.size(); ++j) {
+                if (matrix[i][j] == 1 && vertexColors[j] == colorIndex) {
+                    validColor = false;
+                    break;
+                }
+            }
+
+            // Дополнительная проверка: цвет должен отличаться от цвета соседей и противоположной вершины
+            if (validColor) {
+                // Проверяем, что у всех соседей есть разные цвета
+                for (size_t j = 0; j < vertices.size(); ++j) {
+                    if (matrix[i][j] == 1) {
+                        if (vertexColors[j] != -1 && colorIndex == vertexColors[j]) {
+                            validColor = false;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            // Проверка для противоположной вершины
+            if (validColor && i > 0 && vertexColors[(i + vertices.size() / 2) % vertices.size()] != -1 &&
+                colorIndex == vertexColors[(i + vertices.size() / 2) % vertices.size()]) {
+                validColor = false;
+            }
+
+            if (validColor) {
+                vertexColors[i] = colorIndex;
+                vertices[i]->setBrush(QBrush(colors[colorIndex]));
+                foundColor = true;
+            }
+        }
+    }
+}
 
 
 std::vector<std::vector<int>> graph::generateAdjacencyMatrix()
@@ -311,7 +363,133 @@ string graph::matrix_to_string(const vector<vector<int>>& matrix)
     return ss.str();
 }
 
+std::vector<Edge> graph::build_minimum_spanning_tree(const std::vector<std::vector<int>>& matrix)
+{
+    int numVertices = matrix.size();
+    std::vector<Edge> mstEdges; // Рёбра минимального остовного дерева
+    std::vector<bool> visited(numVertices, false); // Отслеживание посещенных вершин
+    std::priority_queue<Edge> edgeQueue; // Очередь приоритетов для ребер
 
+    // Начинаем с произвольной вершины
+    visited[0] = true;
+
+    // Добавляем все ребра, исходящие из начальной вершины, в очередь
+    for (int i = 1; i < numVertices; ++i) {
+        if (matrix[0][i] == 1) {
+            edgeQueue.push(Edge(0, i, 1));
+        }
+    }
+
+    // Пока не обработаны все вершины
+    while (mstEdges.size() < numVertices - 1) {
+        // Извлекаем ребро с наименьшим весом из очереди
+        Edge currentEdge = edgeQueue.top();
+        edgeQueue.pop();
+
+        // Проверка, есть ли уже в MST ребро, соединяющее
+        // currentEdge.destination с какой-либо другой вершиной
+        bool edgeExistsInMST = false;
+        for (const auto& edge : mstEdges) {
+            if ((edge.source == currentEdge.destination && edge.destination == currentEdge.source) ||
+                (edge.source == currentEdge.destination && edge.destination == currentEdge.source)) {
+                edgeExistsInMST = true;
+                break;
+            }
+        }
+
+        // Если вершина назначения не посещена И ребро еще не в MST
+        if (!visited[currentEdge.destination] && !edgeExistsInMST) {
+            // Добавляем ребро в MST
+            mstEdges.push_back(currentEdge);
+            visited[currentEdge.destination] = true;
+
+            // Добавляем все ребра, исходящие из вершины назначения, в очередь
+            for (int i = 0; i < numVertices; ++i) {
+                if (matrix[currentEdge.destination][i] == 1 && !visited[i]) {
+                    edgeQueue.push(Edge(currentEdge.destination, i, 1));
+                }
+            }
+        }
+    }
+
+    return mstEdges;
+}
+
+void graph::draw_minimum_spanning_tree(const std::vector<std::vector<int>>& matrix, const std::vector<Edge>& mstEdges)
+{
+    QGraphicsScene* scene = new QGraphicsScene();
+
+    // Создаем вершины на углах квадрата
+    std::vector<QGraphicsEllipseItem*> vertices;
+    int sideLength = 300; // Длина стороны квадрата
+    QPointF center(150, 150); // Центр квадрата
+    for (size_t i = 0; i < matrix.size(); ++i)
+    {
+        double angle = 2 * M_PI * i / matrix.size(); // Угол для расположения вершин
+        double x = center.x() + sideLength / 2 * cos(angle);
+        double y = center.y() + sideLength / 2 * sin(angle);
+
+        QGraphicsEllipseItem* vertex = new QGraphicsEllipseItem(x, y, 20, 20);
+        vertex->setBrush(QBrush(Qt::red));
+        scene->addItem(vertex);
+        vertices.push_back(vertex);
+    }
+
+    // Рисуем ребра MST красным цветом
+    for (const auto& edge : mstEdges) {
+        QGraphicsLineItem* mstEdge = new QGraphicsLineItem(vertices[edge.source]->rect().center().x(),
+                                                           vertices[edge.source]->rect().center().y(),
+                                                           vertices[edge.destination]->rect().center().x(),
+                                                           vertices[edge.destination]->rect().center().y());
+        mstEdge->setPen(QPen(Qt::red, 3));
+        scene->addItem(mstEdge);
+    }
+
+    graph::color_vertices(vertices, matrix);
+
+    QGraphicsView* view = new QGraphicsView(scene);
+    view->resize(500, 500);
+    view->show();
+}
+
+vector<int> graph::dijkstra(const vector<vector<Edge>>& graph, int startVertex)
+{
+    int numVertices = graph.size();
+    vector<int> distances(numVertices, std::numeric_limits<int>::max()); // Массив расстояний до вершин
+    vector<bool> visited(numVertices, false); // Массив посещенных вершин
+
+    // Инициализация расстояния от стартовой вершины до самой себя
+    distances[startVertex] = 0;
+
+    // Очередь приоритетов для хранения вершин с их расстояниями
+    priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> queue;
+    queue.push({0, startVertex}); // Добавляем стартовую вершину в очередь
+
+    while (!queue.empty()) {
+        int currentVertex = queue.top().second;
+        queue.pop();
+
+        if (visited[currentVertex]) {
+            continue; // Если вершина уже посещена, пропускаем ее
+        }
+
+        visited[currentVertex] = true;
+
+        // Проходим по всем ребрам, исходящим из текущей вершины
+        for (const auto& edge : graph[currentVertex]) {
+            int neighbor = edge.destination;
+            int distanceToNeighbor = distances[currentVertex] + edge.weight;
+
+            // Если найден более короткий путь до соседа, обновляем расстояние
+            if (distanceToNeighbor < distances[neighbor]) {
+                distances[neighbor] = distanceToNeighbor;
+                queue.push({distances[neighbor], neighbor});
+            }
+        }
+    }
+
+    return distances;
+}
 
 
 
