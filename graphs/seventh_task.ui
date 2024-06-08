@@ -26,10 +26,10 @@
   <widget class="QPushButton" name="send_matrix">
    <property name="geometry">
     <rect>
-     <x>190</x>
+     <x>170</x>
      <y>190</y>
-     <width>111</width>
-     <height>31</height>
+     <width>131</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="text">

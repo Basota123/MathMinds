@@ -1,10 +1,21 @@
 #include "first_task.h"
 #include "ui_first_task.h"
+#include "graph.h"
+#include "designer.h"
+
 
 First_task::First_task(QWidget *parent) : QWidget(parent), ui(new Ui::First_task)
 {
     ui->setupUi(this);
-    ui->textEdit->setReadOnly(true);
+    this->setup();
+
+    designer::edit_buttons(ui->clear_button);
+    designer::edit_buttons(ui->send_matrix);
+
+    designer::edit_input(ui->textEdit);
+    designer::edit_plain_input(ui->plainTextEdit);
+
+
 }
 
 First_task::~First_task()
@@ -12,42 +23,33 @@ First_task::~First_task()
     delete ui;
 }
 
-
-void First_task::on_send_matrix_clicked()
+void First_task::setup()
 {
-    QString* input = new QString(ui->plainTextEdit->toPlainText());
+    QString* ans = new QString();
+    std::string matrix = graph::matrix_to_string(graph::generateAdjacencyMatrix());
 
-    std::string send_input = input->toStdString();
-    auto send_output = graph::null_task(send_input);
+    ans->append(matrix);
+    ui->textEdit->setText(*ans);
 
-    // output for null task
-    auto vertexes = std::get<0>(send_output);
-    int countConnectedComponents = std::get<1>(send_output);
-    string isEulerian = std::get<2>(send_output);
-    string isBipartite = std::get<3>(send_output);
-
-    QString* output = new QString("Степени вершин: \n");
-
-    for (const auto& vertex: vertexes)
-        output->append(vertex + "\n");
-
-    output->append("\n");
-
-    output->append("Число компонент связности: " + std::to_string(countConnectedComponents) + "\n");
-    output->append("\n");
-
-    output->append(isEulerian + "\n");
-    output->append(isBipartite + "\n");
-
-    ui->textEdit->setText(*output);
-
-    auto matrix = graph::parse_string_to_matrix(input->toStdString());
-    graph::draw_graph(matrix);
-
+    graph::draw_graph(graph::parse_string_to_matrix(matrix));
 }
 
 
 void First_task::on_clear_button_clicked()
 {
     ui->textEdit->clear();
+    ui->plainTextEdit->clear();
+    this->setup();
 }
+
+
+void First_task::on_send_matrix_clicked()
+{
+    QString* input_from_constructor = new QString(ui->textEdit->toPlainText());
+
+    auto dfs = graph::dfs_traversal(graph::parse_string_to_matrix(input_from_constructor->toStdString()));
+
+    QString* output = new QString(dfs.c_str());
+    ui->plainTextEdit->setPlainText(*output);
+}
+

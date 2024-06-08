@@ -14,7 +14,7 @@
 #include <QGraphicsLineItem>
 #include <string>
 #include "graph.h"
-
+#include "designer.h"
 
 
 // string for solving null task
@@ -26,10 +26,11 @@ Null_task::Null_task(QWidget *parent) : QWidget(parent), ui(new Ui::Null_task)
     ui->setupUi(this);
     ui->textEdit->setReadOnly(true);
 
-    // ui->clear_button->setStyleSheet("QPushButton { border-radius: 10px; }");
-    // ui->send_matrix->setStyleSheet("QPushButton { border-radius: 10px; }");
-    // ui->plainTextEdit->setStyleSheet("QPlainTextEdit { border-radius: 10px; }");
-    // ui->textEdit->setStyleSheet("QTextEdit { border-radius: 10px; }");
+    designer::edit_buttons(ui->clear_button);
+    designer::edit_buttons(ui->send_matrix);
+
+    designer::edit_input(ui->textEdit);
+    designer::edit_plain_input(ui->plainTextEdit);
 }
 
 

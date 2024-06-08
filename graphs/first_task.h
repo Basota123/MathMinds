@@ -2,23 +2,6 @@
 #define FIRST_TASK_H
 
 #include <QWidget>
-#include <QInputDialog>
-#include <QIntValidator>
-#include <QFrame>
-#include <QVBoxLayout>
-#include <QString>
-#include <QPlainTextEdit>
-#include <QLineEdit>
-#include <QVBoxLayout>
-#include <QGraphicsView>
-#include <QGraphicsScene>
-#include <QGraphicsEllipseItem>
-#include <QGraphicsLineItem>
-#include <string>
-#include "graph.h"
-
-
-
 
 namespace Ui {
 class First_task;
@@ -33,12 +16,13 @@ public:
     ~First_task();
 
 private slots:
-    void on_send_matrix_clicked();
     void on_clear_button_clicked();
 
+    void on_send_matrix_clicked();
 
 private:
     Ui::First_task *ui;
+    void setup();
 };
 
 #endif // FIRST_TASK_H

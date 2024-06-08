@@ -1,12 +1,18 @@
 #include "fifth_task.h"
 #include "ui_fifth_task.h"
 #include "graph.h"
+#include "designer.h"
 
-Fifth_task::Fifth_task(QWidget *parent)
-    : QWidget(parent)
-    , ui(new Ui::Fifth_task)
+
+Fifth_task::Fifth_task(QWidget *parent) : QWidget(parent), ui(new Ui::Fifth_task)
 {
     ui->setupUi(this);
+
+    designer::edit_buttons(ui->clear_button);
+    designer::edit_buttons(ui->send_matrix);
+
+    designer::edit_input(ui->textEdit);
+    designer::edit_plain_input(ui->plainTextEdit);
 }
 
 Fifth_task::~Fifth_task()

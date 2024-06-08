@@ -89,6 +89,94 @@ build CMakeFiles/graphs.dir/graph.cpp.obj: CXX_COMPILER__graphs_unscanned_Releas
   OBJECT_DIR = CMakeFiles\graphs.dir
   OBJECT_FILE_DIR = CMakeFiles\graphs.dir
 
+build CMakeFiles/graphs.dir/fifth_task.cpp.obj: CXX_COMPILER__graphs_unscanned_Release D$:/pantich/graphs/fifth_task.cpp || cmake_object_order_depends_target_graphs
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\graphs.dir\fifth_task.cpp.obj.d
+  FLAGS = -O3 -DNDEBUG -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -ID:/pantich/graphs/build/Desktop_Qt_6_7_1_MinGW_64_bit-Release/graphs_autogen/include -isystem C:/Qt/6.7.1/mingw_64/include/QtCore -isystem C:/Qt/6.7.1/mingw_64/include -isystem C:/Qt/6.7.1/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.7.1/mingw_64/include/QtWidgets -isystem C:/Qt/6.7.1/mingw_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\graphs.dir
+  OBJECT_FILE_DIR = CMakeFiles\graphs.dir
+
+build CMakeFiles/graphs.dir/sixth_task.cpp.obj: CXX_COMPILER__graphs_unscanned_Release D$:/pantich/graphs/sixth_task.cpp || cmake_object_order_depends_target_graphs
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\graphs.dir\sixth_task.cpp.obj.d
+  FLAGS = -O3 -DNDEBUG -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -ID:/pantich/graphs/build/Desktop_Qt_6_7_1_MinGW_64_bit-Release/graphs_autogen/include -isystem C:/Qt/6.7.1/mingw_64/include/QtCore -isystem C:/Qt/6.7.1/mingw_64/include -isystem C:/Qt/6.7.1/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.7.1/mingw_64/include/QtWidgets -isystem C:/Qt/6.7.1/mingw_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\graphs.dir
+  OBJECT_FILE_DIR = CMakeFiles\graphs.dir
+
+build CMakeFiles/graphs.dir/seventh_task.cpp.obj: CXX_COMPILER__graphs_unscanned_Release D$:/pantich/graphs/seventh_task.cpp || cmake_object_order_depends_target_graphs
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\graphs.dir\seventh_task.cpp.obj.d
+  FLAGS = -O3 -DNDEBUG -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -ID:/pantich/graphs/build/Desktop_Qt_6_7_1_MinGW_64_bit-Release/graphs_autogen/include -isystem C:/Qt/6.7.1/mingw_64/include/QtCore -isystem C:/Qt/6.7.1/mingw_64/include -isystem C:/Qt/6.7.1/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.7.1/mingw_64/include/QtWidgets -isystem C:/Qt/6.7.1/mingw_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\graphs.dir
+  OBJECT_FILE_DIR = CMakeFiles\graphs.dir
+
+build CMakeFiles/graphs.dir/second_task.cpp.obj: CXX_COMPILER__graphs_unscanned_Release D$:/pantich/graphs/second_task.cpp || cmake_object_order_depends_target_graphs
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\graphs.dir\second_task.cpp.obj.d
+  FLAGS = -O3 -DNDEBUG -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -ID:/pantich/graphs/build/Desktop_Qt_6_7_1_MinGW_64_bit-Release/graphs_autogen/include -isystem C:/Qt/6.7.1/mingw_64/include/QtCore -isystem C:/Qt/6.7.1/mingw_64/include -isystem C:/Qt/6.7.1/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.7.1/mingw_64/include/QtWidgets -isystem C:/Qt/6.7.1/mingw_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\graphs.dir
+  OBJECT_FILE_DIR = CMakeFiles\graphs.dir
+
+build CMakeFiles/graphs.dir/designer.cpp.obj: CXX_COMPILER__graphs_unscanned_Release D$:/pantich/graphs/designer.cpp || cmake_object_order_depends_target_graphs
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\graphs.dir\designer.cpp.obj.d
+  FLAGS = -O3 -DNDEBUG -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -ID:/pantich/graphs/build/Desktop_Qt_6_7_1_MinGW_64_bit-Release/graphs_autogen/include -isystem C:/Qt/6.7.1/mingw_64/include/QtCore -isystem C:/Qt/6.7.1/mingw_64/include -isystem C:/Qt/6.7.1/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.7.1/mingw_64/include/QtWidgets -isystem C:/Qt/6.7.1/mingw_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\graphs.dir
+  OBJECT_FILE_DIR = CMakeFiles\graphs.dir
+
+build CMakeFiles/graphs.dir/fourth_task.cpp.obj: CXX_COMPILER__graphs_unscanned_Release D$:/pantich/graphs/fourth_task.cpp || cmake_object_order_depends_target_graphs
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\graphs.dir\fourth_task.cpp.obj.d
+  FLAGS = -O3 -DNDEBUG -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -ID:/pantich/graphs/build/Desktop_Qt_6_7_1_MinGW_64_bit-Release/graphs_autogen/include -isystem C:/Qt/6.7.1/mingw_64/include/QtCore -isystem C:/Qt/6.7.1/mingw_64/include -isystem C:/Qt/6.7.1/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.7.1/mingw_64/include/QtWidgets -isystem C:/Qt/6.7.1/mingw_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\graphs.dir
+  OBJECT_FILE_DIR = CMakeFiles\graphs.dir
+
+build CMakeFiles/graphs.dir/first_task.cpp.obj: CXX_COMPILER__graphs_unscanned_Release D$:/pantich/graphs/first_task.cpp || cmake_object_order_depends_target_graphs
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\graphs.dir\first_task.cpp.obj.d
+  FLAGS = -O3 -DNDEBUG -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -ID:/pantich/graphs/build/Desktop_Qt_6_7_1_MinGW_64_bit-Release/graphs_autogen/include -isystem C:/Qt/6.7.1/mingw_64/include/QtCore -isystem C:/Qt/6.7.1/mingw_64/include -isystem C:/Qt/6.7.1/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.7.1/mingw_64/include/QtWidgets -isystem C:/Qt/6.7.1/mingw_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\graphs.dir
+  OBJECT_FILE_DIR = CMakeFiles\graphs.dir
+
+build CMakeFiles/graphs.dir/third_task.cpp.obj: CXX_COMPILER__graphs_unscanned_Release D$:/pantich/graphs/third_task.cpp || cmake_object_order_depends_target_graphs
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\graphs.dir\third_task.cpp.obj.d
+  FLAGS = -O3 -DNDEBUG -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -ID:/pantich/graphs/build/Desktop_Qt_6_7_1_MinGW_64_bit-Release/graphs_autogen/include -isystem C:/Qt/6.7.1/mingw_64/include/QtCore -isystem C:/Qt/6.7.1/mingw_64/include -isystem C:/Qt/6.7.1/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.7.1/mingw_64/include/QtWidgets -isystem C:/Qt/6.7.1/mingw_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\graphs.dir
+  OBJECT_FILE_DIR = CMakeFiles\graphs.dir
+
+build CMakeFiles/graphs.dir/eighth_task.cpp.obj: CXX_COMPILER__graphs_unscanned_Release D$:/pantich/graphs/eighth_task.cpp || cmake_object_order_depends_target_graphs
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\graphs.dir\eighth_task.cpp.obj.d
+  FLAGS = -O3 -DNDEBUG -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -ID:/pantich/graphs/build/Desktop_Qt_6_7_1_MinGW_64_bit-Release/graphs_autogen/include -isystem C:/Qt/6.7.1/mingw_64/include/QtCore -isystem C:/Qt/6.7.1/mingw_64/include -isystem C:/Qt/6.7.1/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.7.1/mingw_64/include/QtWidgets -isystem C:/Qt/6.7.1/mingw_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\graphs.dir
+  OBJECT_FILE_DIR = CMakeFiles\graphs.dir
+
+build CMakeFiles/graphs.dir/prufer_code.cpp.obj: CXX_COMPILER__graphs_unscanned_Release D$:/pantich/graphs/prufer_code.cpp || cmake_object_order_depends_target_graphs
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\graphs.dir\prufer_code.cpp.obj.d
+  FLAGS = -O3 -DNDEBUG -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -ID:/pantich/graphs/build/Desktop_Qt_6_7_1_MinGW_64_bit-Release/graphs_autogen/include -isystem C:/Qt/6.7.1/mingw_64/include/QtCore -isystem C:/Qt/6.7.1/mingw_64/include -isystem C:/Qt/6.7.1/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.7.1/mingw_64/include/QtWidgets -isystem C:/Qt/6.7.1/mingw_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\graphs.dir
+  OBJECT_FILE_DIR = CMakeFiles\graphs.dir
+
+build CMakeFiles/graphs.dir/prufer_decode.cpp.obj: CXX_COMPILER__graphs_unscanned_Release D$:/pantich/graphs/prufer_decode.cpp || cmake_object_order_depends_target_graphs
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\graphs.dir\prufer_decode.cpp.obj.d
+  FLAGS = -O3 -DNDEBUG -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -ID:/pantich/graphs/build/Desktop_Qt_6_7_1_MinGW_64_bit-Release/graphs_autogen/include -isystem C:/Qt/6.7.1/mingw_64/include/QtCore -isystem C:/Qt/6.7.1/mingw_64/include -isystem C:/Qt/6.7.1/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.7.1/mingw_64/include/QtWidgets -isystem C:/Qt/6.7.1/mingw_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\graphs.dir
+  OBJECT_FILE_DIR = CMakeFiles\graphs.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target graphs
@@ -97,7 +185,7 @@ build CMakeFiles/graphs.dir/graph.cpp.obj: CXX_COMPILER__graphs_unscanned_Releas
 #############################################
 # Link the executable graphs.exe
 
-build graphs.exe: CXX_EXECUTABLE_LINKER__graphs_Release CMakeFiles/graphs.dir/graphs_autogen/mocs_compilation.cpp.obj CMakeFiles/graphs.dir/main.cpp.obj CMakeFiles/graphs.dir/mainwindow.cpp.obj CMakeFiles/graphs.dir/null_task.cpp.obj CMakeFiles/graphs.dir/graph.cpp.obj | C$:/Qt/6.7.1/mingw_64/lib/libQt6Widgets.a C$:/Qt/6.7.1/mingw_64/lib/libQt6Gui.a C$:/Qt/6.7.1/mingw_64/lib/libQt6Core.a C$:/Qt/6.7.1/mingw_64/lib/libQt6EntryPoint.a || graphs_autogen graphs_autogen_timestamp_deps
+build graphs.exe: CXX_EXECUTABLE_LINKER__graphs_Release CMakeFiles/graphs.dir/graphs_autogen/mocs_compilation.cpp.obj CMakeFiles/graphs.dir/main.cpp.obj CMakeFiles/graphs.dir/mainwindow.cpp.obj CMakeFiles/graphs.dir/null_task.cpp.obj CMakeFiles/graphs.dir/graph.cpp.obj CMakeFiles/graphs.dir/fifth_task.cpp.obj CMakeFiles/graphs.dir/sixth_task.cpp.obj CMakeFiles/graphs.dir/seventh_task.cpp.obj CMakeFiles/graphs.dir/second_task.cpp.obj CMakeFiles/graphs.dir/designer.cpp.obj CMakeFiles/graphs.dir/fourth_task.cpp.obj CMakeFiles/graphs.dir/first_task.cpp.obj CMakeFiles/graphs.dir/third_task.cpp.obj CMakeFiles/graphs.dir/eighth_task.cpp.obj CMakeFiles/graphs.dir/prufer_code.cpp.obj CMakeFiles/graphs.dir/prufer_decode.cpp.obj | C$:/Qt/6.7.1/mingw_64/lib/libQt6Widgets.a C$:/Qt/6.7.1/mingw_64/lib/libQt6Gui.a C$:/Qt/6.7.1/mingw_64/lib/libQt6Core.a C$:/Qt/6.7.1/mingw_64/lib/libQt6EntryPoint.a || graphs_autogen graphs_autogen_timestamp_deps
   FLAGS = -O3 -DNDEBUG
   LINK_FLAGS = -mwindows
   LINK_LIBRARIES = C:/Qt/6.7.1/mingw_64/lib/libQt6Widgets.a  C:/Qt/6.7.1/mingw_64/lib/libQt6Gui.a  C:/Qt/6.7.1/mingw_64/lib/libQt6Core.a  -lmpr  -luserenv  -lmingw32  C:/Qt/6.7.1/mingw_64/lib/libQt6EntryPoint.a  -lshell32  -ld3d11  -ldxgi  -ldxguid  -ld3d12  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
@@ -184,7 +272,7 @@ build graphs_autogen_timestamp_deps: phony CMakeFiles/graphs_autogen_timestamp_d
 #############################################
 # Utility command for graphs_autogen
 
-build graphs_autogen: phony CMakeFiles/graphs_autogen graphs_autogen/include/ui_mainwindow.h graphs_autogen/include/ui_null_task.h graphs_autogen/timestamp graphs_autogen/mocs_compilation.cpp graphs_autogen_timestamp_deps
+build graphs_autogen: phony CMakeFiles/graphs_autogen graphs_autogen/include/ui_mainwindow.h graphs_autogen/include/ui_null_task.h graphs_autogen/include/ui_fifth_task.h graphs_autogen/include/ui_sixth_task.h graphs_autogen/include/ui_seventh_task.h graphs_autogen/include/ui_second_task.h graphs_autogen/include/ui_fourth_task.h graphs_autogen/include/ui_first_task.h graphs_autogen/include/ui_third_task.h graphs_autogen/include/ui_eighth_task.h graphs_autogen/include/ui_prufer_code.h graphs_autogen/include/ui_prufer_decode.h graphs_autogen/timestamp graphs_autogen/mocs_compilation.cpp graphs_autogen_timestamp_deps
 
 
 #############################################
@@ -206,7 +294,7 @@ build CMakeFiles/graphs_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFile
 #############################################
 # Phony custom command for CMakeFiles\graphs_autogen
 
-build CMakeFiles/graphs_autogen graphs_autogen/include/ui_mainwindow.h graphs_autogen/include/ui_null_task.h | ${cmake_ninja_workdir}CMakeFiles/graphs_autogen ${cmake_ninja_workdir}graphs_autogen/include/ui_mainwindow.h ${cmake_ninja_workdir}graphs_autogen/include/ui_null_task.h: phony graphs_autogen/timestamp || graphs_autogen_timestamp_deps
+build CMakeFiles/graphs_autogen graphs_autogen/include/ui_mainwindow.h graphs_autogen/include/ui_null_task.h graphs_autogen/include/ui_fifth_task.h graphs_autogen/include/ui_sixth_task.h graphs_autogen/include/ui_seventh_task.h graphs_autogen/include/ui_second_task.h graphs_autogen/include/ui_fourth_task.h graphs_autogen/include/ui_first_task.h graphs_autogen/include/ui_third_task.h graphs_autogen/include/ui_eighth_task.h graphs_autogen/include/ui_prufer_code.h graphs_autogen/include/ui_prufer_decode.h | ${cmake_ninja_workdir}CMakeFiles/graphs_autogen ${cmake_ninja_workdir}graphs_autogen/include/ui_mainwindow.h ${cmake_ninja_workdir}graphs_autogen/include/ui_null_task.h ${cmake_ninja_workdir}graphs_autogen/include/ui_fifth_task.h ${cmake_ninja_workdir}graphs_autogen/include/ui_sixth_task.h ${cmake_ninja_workdir}graphs_autogen/include/ui_seventh_task.h ${cmake_ninja_workdir}graphs_autogen/include/ui_second_task.h ${cmake_ninja_workdir}graphs_autogen/include/ui_fourth_task.h ${cmake_ninja_workdir}graphs_autogen/include/ui_first_task.h ${cmake_ninja_workdir}graphs_autogen/include/ui_third_task.h ${cmake_ninja_workdir}graphs_autogen/include/ui_eighth_task.h ${cmake_ninja_workdir}graphs_autogen/include/ui_prufer_code.h ${cmake_ninja_workdir}graphs_autogen/include/ui_prufer_decode.h: phony graphs_autogen/timestamp || graphs_autogen_timestamp_deps
 
 # =============================================================================
 # Target aliases.

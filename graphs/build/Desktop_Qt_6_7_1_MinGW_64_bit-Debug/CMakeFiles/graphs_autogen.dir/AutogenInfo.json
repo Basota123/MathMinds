@@ -314,6 +314,18 @@
 	"HEADERS" : 
 	[
 		[
+			"D:/pantich/graphs/designer.h",
+			"MU",
+			"EWIEGA46WW/moc_designer.cpp",
+			null
+		],
+		[
+			"D:/pantich/graphs/eighth_task.h",
+			"MU",
+			"EWIEGA46WW/moc_eighth_task.cpp",
+			null
+		],
+		[
 			"D:/pantich/graphs/fifth_task.h",
 			"MU",
 			"EWIEGA46WW/moc_fifth_task.cpp",
@@ -323,6 +335,12 @@
 			"D:/pantich/graphs/first_task.h",
 			"MU",
 			"EWIEGA46WW/moc_first_task.cpp",
+			null
+		],
+		[
+			"D:/pantich/graphs/fourth_task.h",
+			"MU",
+			"EWIEGA46WW/moc_fourth_task.cpp",
 			null
 		],
 		[ "D:/pantich/graphs/graph.h", "MU", "EWIEGA46WW/moc_graph.cpp", null ],
@@ -339,6 +357,24 @@
 			null
 		],
 		[
+			"D:/pantich/graphs/prufer_code.h",
+			"MU",
+			"EWIEGA46WW/moc_prufer_code.cpp",
+			null
+		],
+		[
+			"D:/pantich/graphs/prufer_decode.h",
+			"MU",
+			"EWIEGA46WW/moc_prufer_decode.cpp",
+			null
+		],
+		[
+			"D:/pantich/graphs/second_task.h",
+			"MU",
+			"EWIEGA46WW/moc_second_task.cpp",
+			null
+		],
+		[
 			"D:/pantich/graphs/seventh_task.h",
 			"MU",
 			"EWIEGA46WW/moc_seventh_task.cpp",
@@ -348,6 +384,12 @@
 			"D:/pantich/graphs/sixth_task.h",
 			"MU",
 			"EWIEGA46WW/moc_sixth_task.cpp",
+			null
+		],
+		[
+			"D:/pantich/graphs/third_task.h",
+			"MU",
+			"EWIEGA46WW/moc_third_task.cpp",
 			null
 		]
 	],
@@ -422,14 +464,21 @@
 	"SETTINGS_FILE" : "D:/pantich/graphs/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/CMakeFiles/graphs_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[ "D:/pantich/graphs/designer.cpp", "MU", null ],
+		[ "D:/pantich/graphs/eighth_task.cpp", "MU", null ],
 		[ "D:/pantich/graphs/fifth_task.cpp", "MU", null ],
 		[ "D:/pantich/graphs/first_task.cpp", "MU", null ],
+		[ "D:/pantich/graphs/fourth_task.cpp", "MU", null ],
 		[ "D:/pantich/graphs/graph.cpp", "MU", null ],
 		[ "D:/pantich/graphs/main.cpp", "MU", null ],
 		[ "D:/pantich/graphs/mainwindow.cpp", "MU", null ],
 		[ "D:/pantich/graphs/null_task.cpp", "MU", null ],
+		[ "D:/pantich/graphs/prufer_code.cpp", "MU", null ],
+		[ "D:/pantich/graphs/prufer_decode.cpp", "MU", null ],
+		[ "D:/pantich/graphs/second_task.cpp", "MU", null ],
 		[ "D:/pantich/graphs/seventh_task.cpp", "MU", null ],
-		[ "D:/pantich/graphs/sixth_task.cpp", "MU", null ]
+		[ "D:/pantich/graphs/sixth_task.cpp", "MU", null ],
+		[ "D:/pantich/graphs/third_task.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],

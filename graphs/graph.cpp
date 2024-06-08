@@ -1,5 +1,6 @@
 #include "graph.h"
 #include <sstream>
+#include <stack>
 #include <limits>
 #include <QInputDialog>
 #include <QIntValidator>
@@ -7,6 +8,8 @@
 #include <QVBoxLayout>
 #include <QString>
 #include <QPlainTextEdit>
+#include <QVector>
+#include <QQueue>
 #include <QLineEdit>
 #include <QVBoxLayout>
 #include <QGraphicsView>
@@ -14,7 +17,8 @@
 #include <QGraphicsEllipseItem>
 #include <QGraphicsLineItem>
 #include <string>
-#include <random>
+#include <QThread>
+#include <QTimer>
 #include <cmath>
 #include <iomanip>
 #include <experimental/random>
@@ -22,6 +26,7 @@
 using std::pair;
 using std::priority_queue;
 using std::greater;
+using std::stack;
 
 
 /*
@@ -76,10 +81,70 @@ std::tuple<vector<string>, int, string, string> graph::null_task(const std::stri
 }
 
 
+std::string graph::dfs_traversal(const std::vector<std::vector<int>>& matrix)
+{
+    std::string dfs_order;
+    std::vector<bool> visited(matrix.size(), false);
+    std::stack<int> stack;
+    char start_vertex = 'A';
+
+    stack.push(0);  // Assuming the traversal starts from vertex 'A' which corresponds to index 0
+
+    while (!stack.empty()) {
+        int vertex = stack.top();
+        stack.pop();
+
+        if (!visited[vertex]) {
+            visited[vertex] = true;
+            dfs_order += (start_vertex + vertex);
+            dfs_order += ' ';
+
+            for (int i = matrix.size() - 1; i >= 0; --i) {
+                if (matrix[vertex][i] == 1 && !visited[i]) {
+                    stack.push(i);
+                }
+            }
+        }
+    }
+
+    if (!dfs_order.empty()) {
+        dfs_order.pop_back();  // Remove the trailing space
+    }
+
+    return dfs_order;
+}
 
 
+std::string graph::bfs_traversal(const std::vector<std::vector<int>>& matrix) {
+    std::string bfs_order;
+    std::vector<bool> visited(matrix.size(), false);
+    std::queue<int> queue;
+    char start_vertex = 'A';
 
+    queue.push(0);  // Начинаем обход с вершины 'A', которая соответствует индексу 0
+    visited[0] = true;
 
+    while (!queue.empty()) {
+        int vertex = queue.front();
+        queue.pop();
+
+        bfs_order += (start_vertex + vertex);
+        bfs_order += ' ';
+
+        for (int i = 0; i < matrix.size(); ++i) {
+            if (matrix[vertex][i] == 1 && !visited[i]) {
+                queue.push(i);
+                visited[i] = true;
+            }
+        }
+    }
+
+    if (!bfs_order.empty()) {
+        bfs_order.pop_back();  // Удаляем последний пробел
+    }
+
+    return bfs_order;
+}
 
 
 
@@ -228,17 +293,19 @@ bool graph::isCompleteBipartite(const vector<vector<int>>& adjacencyMatrix)
     return true; // Граф полный двудольный
 }
 
-void graph::draw_graph(const vector<vector<int>>& matrix)
+void graph::draw_graph(const std::vector<std::vector<int>>& matrix)
 {
     QGraphicsScene* scene = new QGraphicsScene();
 
-    // Создаем вершины на углах квадрата
-    vector<QGraphicsEllipseItem*> vertices;
-    int sideLength = 300; // Длина стороны квадрата
-    QPointF center(150, 150); // Центр квадрата
+    std::vector<QGraphicsEllipseItem*> vertices;
+    int sideLength = 300;
+    QPointF center(150, 150);
+
+    char c = 65;
+
     for (size_t i = 0; i < matrix.size(); ++i)
     {
-        double angle = 2 * M_PI * i / matrix.size(); // Угол для расположения вершин
+        double angle = 2 * M_PI * i / matrix.size();
         double x = center.x() + sideLength / 2 * cos(angle);
         double y = center.y() + sideLength / 2 * sin(angle);
 
@@ -246,6 +313,20 @@ void graph::draw_graph(const vector<vector<int>>& matrix)
         vertex->setBrush(QBrush(Qt::red));
         scene->addItem(vertex);
         vertices.push_back(vertex);
+
+        QString letter(c);
+        ++c;
+
+        QFont font;
+        font.setPointSize(16);
+        font.setFamily("Arial");
+        font.setBold(true);
+
+
+        QGraphicsTextItem* label = new QGraphicsTextItem(letter);
+        label->setPos(x+=10, y+=10);
+        label->setFont(font);
+        scene->addItem(label);
     }
 
     // Создаем рёбра
@@ -257,15 +338,14 @@ void graph::draw_graph(const vector<vector<int>>& matrix)
                                                                 vertices[i]->rect().center().y(),
                                                                 vertices[j]->rect().center().x(),
                                                                 vertices[j]->rect().center().y());
-                edge->setPen(QPen(Qt::black, 2));
+                edge->setPen(QPen(Qt::darkGray, 2));
                 scene->addItem(edge);
 
-                // Добавляем ребро в обратном направлении, чтобы учесть обоюдное соединение вершин
                 QGraphicsLineItem* reverseEdge = new QGraphicsLineItem(vertices[j]->rect().center().x(),
                                                                        vertices[j]->rect().center().y(),
                                                                        vertices[i]->rect().center().x(),
                                                                        vertices[i]->rect().center().y());
-                reverseEdge->setPen(QPen(Qt::black, 2));
+                reverseEdge->setPen(QPen(Qt::darkGray, 2));
                 scene->addItem(reverseEdge);
             }
 
@@ -278,8 +358,8 @@ void graph::draw_graph(const vector<vector<int>>& matrix)
 
 void graph::color_vertices(const std::vector<QGraphicsEllipseItem*>& vertices, const std::vector<std::vector<int>>& matrix)
 {
-    std::vector<QColor> colors = {Qt::blue, Qt::green, Qt::yellow, Qt::cyan, Qt::magenta}; // Список цветов для раскраски
-    std::vector<int> vertexColors(vertices.size(), -1); // Массив цветов вершин (-1 - не покрашена)
+    std::vector<QColor> colors = {Qt::blue, Qt::green, Qt::yellow, Qt::cyan, Qt::magenta};
+    std::vector<int> vertexColors(vertices.size(), -1);
 
     // Алгоритм жадного раскрашивания с дополнительной проверкой на цвета соседей
     for (size_t i = 0; i < vertices.size(); ++i) {
@@ -322,7 +402,6 @@ void graph::color_vertices(const std::vector<QGraphicsEllipseItem*>& vertices, c
         }
     }
 }
-
 
 std::vector<std::vector<int>> graph::generateAdjacencyMatrix()
 {
@@ -452,136 +531,114 @@ void graph::draw_minimum_spanning_tree(const std::vector<std::vector<int>>& matr
     view->show();
 }
 
-vector<int> graph::dijkstra(const vector<vector<Edge>>& graph, int startVertex)
+
+vector<vector<int>> graph::findShortestPaths(const vector<vector<int>>& adjacencyMatrix, int startVertex)
 {
-    int numVertices = graph.size();
-    vector<int> distances(numVertices, std::numeric_limits<int>::max()); // Массив расстояний до вершин
-    vector<bool> visited(numVertices, false); // Массив посещенных вершин
+    int numVertices = adjacencyMatrix.size();
+    vector<vector<int>> shortestPaths(numVertices, vector<int>(numVertices, std::numeric_limits<int>::max())); // Инициализация матрицы кратчайших путей
 
-    // Инициализация расстояния от стартовой вершины до самой себя
-    distances[startVertex] = 0;
+    queue<int> q;
+    q.push(startVertex);
+    shortestPaths[startVertex][startVertex] = 0;
 
-    // Очередь приоритетов для хранения вершин с их расстояниями
-    priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> queue;
-    queue.push({0, startVertex}); // Добавляем стартовую вершину в очередь
+    while (!q.empty()) {
+        int currentVertex = q.front();
+        q.pop();
 
-    while (!queue.empty()) {
-        int currentVertex = queue.top().second;
-        queue.pop();
-
-        if (visited[currentVertex]) {
-            continue; // Если вершина уже посещена, пропускаем ее
-        }
-
-        visited[currentVertex] = true;
-
-        // Проходим по всем ребрам, исходящим из текущей вершины
-        for (const auto& edge : graph[currentVertex]) {
-            int neighbor = edge.destination;
-            int distanceToNeighbor = distances[currentVertex] + edge.weight;
-
-            // Если найден более короткий путь до соседа, обновляем расстояние
-            if (distanceToNeighbor < distances[neighbor]) {
-                distances[neighbor] = distanceToNeighbor;
-                queue.push({distances[neighbor], neighbor});
+        for (int neighbor = 0; neighbor < numVertices; ++neighbor) {
+            if (adjacencyMatrix[currentVertex][neighbor] == 1 && shortestPaths[startVertex][neighbor] == std::numeric_limits<int>::max()) {
+                shortestPaths[startVertex][neighbor] = shortestPaths[startVertex][currentVertex] + 1;
+                q.push(neighbor);
             }
         }
     }
 
-    return distances;
+    return shortestPaths;
+
 }
 
 
-
-// Функция кодирования Прюфера
-vector<int> graph::prufer_encode(const unordered_map<int, vector<int>>& tree)
+vector<int> graph::pruferCode(const vector<vector<int>>& adjacencyMatrix)
 {
-    int n = tree.size();
-    vector<int> code;
-    unordered_map<int, int> degree;
+    int n = adjacencyMatrix.size();
+    vector<int> degree(n, 0);
+    vector<bool> deleted(n, false);
 
-    // Инициализируем степени вершин
-    for (const auto& [node, neighbors] : tree) {
-        degree[node] = neighbors.size();
+    for (int i = 0; i < n; ++i) {
+        degree[i] = 0;
+        for (int j = 0; j < n; ++j) {
+            degree[i] += adjacencyMatrix[i][j];
+        }
     }
 
-    while (code.size() < n - 2) {
-        // Находим вершину с наименьшей степенью, которая не является корнем
-        int min_degree = n;
-        int min_node = -1;
-        for (const auto& [node, deg] : degree) {
-            if (deg == 1 && node != 0) {  // 0 - предположительное корневое значение
-                min_degree = deg;
-                min_node = node;
+    priority_queue<int, vector<int>, greater<int>> leaves;
+
+    for (int i = 0; i < n; ++i) {
+        if (degree[i] == 1) {
+            leaves.push(i);
+        }
+    }
+
+    vector<int> prufer(n - 2);
+
+    for (int i = 0; i < n - 2; ++i) {
+        int leaf = leaves.top();
+        leaves.pop();
+        deleted[leaf] = true;
+
+        int neighbor;
+        for (int j = 0; j < n; ++j) {
+            if (adjacencyMatrix[leaf][j] && !deleted[j]) {
+                neighbor = j;
                 break;
             }
         }
 
-        // Удаляем вершину с наименьшей степенью
-        int neighbor = tree.at(min_node)[0];
-        degree[min_node]--;
-        degree[neighbor]--;
+        prufer[i] = neighbor;
 
-        // Добавляем в код соседнюю вершину
-        code.push_back(neighbor);
+        if (--degree[neighbor] == 1) {
+            leaves.push(neighbor);
+        }
     }
 
-    return code;
+    return prufer;
 }
 
-// Функция декодирования Прюфера
-// unordered_map<int, vector<int>> graph::prufer_decode(const vector<int>& code, int n)
-// {
-//     unordered_map<int, vector<int>> tree;
-//     unordered_map<int, int> degree;
+vector<vector<int>> graph::decodePrufer(const vector<int>& pruferCode)
+{
+    int n = pruferCode.size() + 2;
+    vector<int> degree(n, 1);
 
-//     // Инициализируем степени вершин
-//     for (int i = 0; i < n; ++i) {
-//         degree[i] = 1;
-//     }
+    for (int i : pruferCode) {
+        degree[i]++;
+    }
 
-//     // Увеличиваем степень для всех вершин в коде Прюфера
-//     for (int node : code) {
-//         degree[node]++;
-//     }
+    int leaf = 0;
+    while (degree[leaf] != 1) {
+        leaf++;
+    }
 
-//     // Находим корневую вершину
-//     int root = 0;
-//     for (int i = 0; i < n; ++i) {
-//         if (degree[i] == 1) {
-//             root = i;
-//             break;
-//         }
-//     }
+    int j = *min_element(pruferCode.begin(), pruferCode.end());
+    j = (j == 0 ? 1 : 0);
 
-//     // Восстанавливаем дерево
-//     queue<int, vector<int>> q(code);
-//     for (int i = 0; i < n - 2; ++i) {
-//         int node = q.front();
-//         q.pop();
+    vector<vector<int>> adjacencyMatrix(n, vector<int>(n, 0));
 
-//         // Находим соседнюю вершину с degree == 1
-//         for (int j = 0; j < n; ++j) {
-//             if (degree[j] == 1 && j != node) {
-//                 tree[node].push_back(j);
-//                 tree[j].push_back(node);
-//                 degree[node]--;
-//                 degree[j]--;
-//                 break;
-//             }
-//         }
-//     }
+    for (int i : pruferCode) {
+        adjacencyMatrix[i][j] = adjacencyMatrix[j][i] = 1;
+        degree[i]--;
+        degree[j]--;
 
-//     // Соединяем корень с последними двумя вершинами
-//     for (int i = 0; i < n; ++i) {
-//         if (degree[i] == 1 && i != root) {
-//             tree[root].push_back(i);
-//             tree[i].push_back(root);
-//             break;
-//         }
-//     }
+        if (degree[i] == 1 && i < leaf) {
+            j = i;
+        } else {
+            j = leaf;
+            while (degree[j] != 1) {
+                j++;
+            }
+        }
+    }
 
-//     return tree;
-// }
+    adjacencyMatrix[leaf][j] = adjacencyMatrix[j][leaf] = 1;
 
-
+    return adjacencyMatrix;
+}

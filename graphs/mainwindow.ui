@@ -17,7 +17,7 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>410</x>
+      <x>390</x>
       <y>0</y>
       <width>551</width>
       <height>41</height>
@@ -30,124 +30,150 @@
      </font>
     </property>
     <property name="text">
-     <string>MathMinds - ваш недаженый помощник в решении задач</string>
+     <string>MathMinds - ваш надёженый помощник в решении задач</string>
     </property>
    </widget>
    <widget class="QPushButton" name="null_task_button">
     <property name="geometry">
      <rect>
-      <x>110</x>
-      <y>70</y>
-      <width>101</width>
-      <height>81</height>
+      <x>410</x>
+      <y>50</y>
+      <width>151</width>
+      <height>111</height>
      </rect>
     </property>
     <property name="text">
      <string>Нулевая задача</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="first_task_button">
+   <widget class="QPushButton" name="second_task_button">
     <property name="geometry">
      <rect>
-      <x>240</x>
-      <y>70</y>
-      <width>101</width>
-      <height>81</height>
+      <x>770</x>
+      <y>50</y>
+      <width>151</width>
+      <height>111</height>
      </rect>
     </property>
     <property name="text">
-     <string>Первая задача</string>
+     <string>is DFS?</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_3">
+   <widget class="QPushButton" name="fourth_task_button">
     <property name="geometry">
      <rect>
-      <x>380</x>
-      <y>70</y>
-      <width>101</width>
-      <height>81</height>
+      <x>590</x>
+      <y>180</y>
+      <width>151</width>
+      <height>111</height>
      </rect>
     </property>
     <property name="text">
-     <string>Вторая задача</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_4">
-    <property name="geometry">
-     <rect>
-      <x>510</x>
-      <y>70</y>
-      <width>101</width>
-      <height>81</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Третья Задача</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_5">
-    <property name="geometry">
-     <rect>
-      <x>640</x>
-      <y>70</y>
-      <width>101</width>
-      <height>81</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Четвертая задача</string>
+     <string>is BFS?</string>
     </property>
    </widget>
    <widget class="QPushButton" name="fifth_task_button">
     <property name="geometry">
      <rect>
-      <x>760</x>
-      <y>70</y>
-      <width>101</width>
-      <height>81</height>
+      <x>770</x>
+      <y>180</y>
+      <width>151</width>
+      <height>111</height>
      </rect>
     </property>
     <property name="text">
-     <string>Пятая задача</string>
+     <string>ЧКС</string>
     </property>
    </widget>
    <widget class="QPushButton" name="sixth_task_button">
     <property name="geometry">
      <rect>
-      <x>890</x>
-      <y>70</y>
-      <width>101</width>
-      <height>81</height>
+      <x>410</x>
+      <y>310</y>
+      <width>151</width>
+      <height>111</height>
      </rect>
     </property>
     <property name="text">
-     <string>Шестая задача</string>
+     <string>ЧКС?</string>
     </property>
    </widget>
    <widget class="QPushButton" name="seventh_task_button">
     <property name="geometry">
      <rect>
-      <x>1020</x>
-      <y>70</y>
-      <width>101</width>
-      <height>81</height>
+      <x>590</x>
+      <y>310</y>
+      <width>151</width>
+      <height>111</height>
      </rect>
     </property>
     <property name="text">
-     <string>Седьмая задача</string>
+     <string>МОД</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_9">
+   <widget class="QPushButton" name="first_task_button">
     <property name="geometry">
      <rect>
-      <x>1150</x>
-      <y>70</y>
-      <width>101</width>
-      <height>81</height>
+      <x>590</x>
+      <y>50</y>
+      <width>151</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>DFS</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="third_task_button">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>180</y>
+      <width>151</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>BFS</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="eighth_task_button">
+    <property name="geometry">
+     <rect>
+      <x>770</x>
+      <y>310</y>
+      <width>151</width>
+      <height>111</height>
      </rect>
     </property>
     <property name="text">
      <string>Восьмая задача</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="prufer_code_button">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>440</y>
+      <width>151</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>PruferCode</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="prufer_decode_button">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>440</y>
+      <width>151</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>PruferCode</string>
     </property>
    </widget>
   </widget>

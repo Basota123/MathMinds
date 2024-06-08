@@ -43,7 +43,7 @@ public:
         label->setFont(font);
         send_matrix = new QPushButton(Null_task);
         send_matrix->setObjectName("send_matrix");
-        send_matrix->setGeometry(QRect(530, 570, 111, 31));
+        send_matrix->setGeometry(QRect(530, 560, 111, 41));
         textEdit = new QTextEdit(Null_task);
         textEdit->setObjectName("textEdit");
         textEdit->setGeometry(QRect(30, 360, 641, 191));
@@ -59,7 +59,7 @@ public:
         plainTextEdit->setGeometry(QRect(240, 30, 231, 141));
         clear_button = new QPushButton(Null_task);
         clear_button->setObjectName("clear_button");
-        clear_button->setGeometry(QRect(110, 320, 80, 24));
+        clear_button->setGeometry(QRect(110, 310, 121, 41));
         QFont font2;
         font2.setPointSize(11);
         clear_button->setFont(font2);

@@ -35,10 +35,18 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         ${PROJECT_SOURCES}
         null_task.h null_task.cpp null_task.ui
         graph.h graph.cpp
-        first_task.h first_task.cpp first_task.ui
+
         fifth_task.h fifth_task.cpp fifth_task.ui
         sixth_task.h sixth_task.cpp sixth_task.ui
         seventh_task.h seventh_task.cpp seventh_task.ui
+        second_task.h second_task.cpp second_task.ui
+        designer.h designer.cpp
+        fourth_task.h fourth_task.cpp fourth_task.ui
+        first_task.h first_task.cpp first_task.ui
+        third_task.h third_task.cpp third_task.ui
+        eighth_task.h eighth_task.cpp eighth_task.ui
+        prufer_code.h prufer_code.cpp prufer_code.ui
+        prufer_decode.h prufer_decode.cpp prufer_decode.ui
 
     )
 # Define target properties for Android with Qt 6 as:

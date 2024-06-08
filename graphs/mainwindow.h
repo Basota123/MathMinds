@@ -4,6 +4,8 @@
 #include <QMainWindow>
 
 
+
+
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class MainWindow;
@@ -22,14 +24,27 @@ public:
 
 private slots:
     void on_exit_from_application_triggered();
+
     void on_null_task_button_clicked();
+    void on_second_task_button_clicked();
+    void on_fifth_task_button_clicked();
+    void on_sixth_task_button_clicked();
+    void on_seventh_task_button_clicked();
+
+
+
+
+    void on_fourth_task_button_clicked();
+
     void on_first_task_button_clicked();
 
-    void on_fifth_task_button_clicked();
+    void on_third_task_button_clicked();
 
-    void on_sixth_task_button_clicked();
+    void on_eighth_task_button_clicked();
 
-    void on_seventh_task_button_clicked();
+    void on_prufer_code_button_clicked();
+
+    void on_prufer_decode_button_clicked();
 
 private:
     Ui::MainWindow *ui;

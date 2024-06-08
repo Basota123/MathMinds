@@ -1,11 +1,16 @@
 #include "seventh_task.h"
 #include "ui_seventh_task.h"
 #include "graph.h"
+#include "designer.h"
 
 
 Seventh_task::Seventh_task(QWidget *parent) : QWidget(parent), ui(new Ui::Seventh_task)
 {
     ui->setupUi(this);
+
+
+    designer::edit_buttons(ui->send_matrix);
+    designer::edit_plain_input(ui->plainTextEdit);
 }
 
 Seventh_task::~Seventh_task()

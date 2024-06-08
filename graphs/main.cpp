@@ -1,6 +1,6 @@
 #include <QApplication>
 #include "mainwindow.h"
-
+#include "designer.h"
 
 
 int main(int argc, char *argv[])
@@ -10,7 +10,9 @@ int main(int argc, char *argv[])
     MainWindow* main_window = new MainWindow();
     main_window->setWindowTitle("MathMinds::Graphs");
 
-    // main_window->setStyleSheet("background-color: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #cccccc, stop:1 #999999);");
+    designer::edit_background_main_window(main_window);
+
+
 
     main_window->show();
 

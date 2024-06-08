@@ -1,6 +1,7 @@
 #ifndef GRAPH_H
 #define GRAPH_H
 
+#include "qgraphicsscene.h"
 #include <string>
 #include <vector>
 #include <queue>
@@ -15,16 +16,24 @@ using std::string;
 using std::queue;
 using std::unordered_map;
 
+
 struct Edge;
+struct _Vertex;
+
 
 class graph
 {
+
 public:
     static std::tuple<vector<string>, int, string, string> null_task(const std::string&);
 
-
-
     static std::vector<std::vector<int>> parse_string_to_matrix(const std::string&);
+
+    // Метод для обхода DFS
+    static std::string dfs_traversal(const std::vector<std::vector<int>>& matrix);
+    // Метод для обхода BFS
+    static std::string bfs_traversal(const std::vector<std::vector<int>>& matrix);
+
 
     // Функция для определения степени вершины в графе
     static int getDegree(const vector<vector<int>>& adjacencyMatrix, int vertex);
@@ -51,10 +60,10 @@ public:
     static void color_vertices(const std::vector<QGraphicsEllipseItem*>& vertices, const std::vector<std::vector<int>>& matrix);
 
     // Функция кодирования Прюфера
-    static vector<int> prufer_encode(const unordered_map<int, vector<int>>& tree);
+    static vector<int> pruferCode(const vector<vector<int>>& adjacencyMatrix);
 
     // Функция декодирования Прюфера
-    static unordered_map<int, vector<int>> prufer_decode(const vector<int>& code, int n);
+    static vector<vector<int>> decodePrufer(const vector<int>& pruferCode);
 
     // Функция генерации случайной матрицы смежности
     static std::vector<std::vector<int>> generateAdjacencyMatrix();
@@ -64,15 +73,21 @@ public:
     static std::vector<Edge> build_minimum_spanning_tree(const std::vector<std::vector<int>>& matrix);
     static void draw_minimum_spanning_tree(const std::vector<std::vector<int>>& matrix, const std::vector<Edge>& mstEdges);
 
-    // Функция для поиска кратчайших путей от заданной вершины до остальных
-    // Задача 8
-    static vector<int> dijkstra(const vector<vector<Edge>>& graph, int startVertex);
 
+    // Задача 8
+    // Алгоритм поиска кратчайших путей от заданной вершины
+    static vector<vector<int>> findShortestPaths(const vector<vector<int>>& adjacencyMatrix, int startVertex);
 
 
     static string matrix_to_string(const vector<vector<int>>& matrix);
 
 
+};
+
+
+struct _Vertex {
+    int id;
+    QGraphicsEllipseItem* item;
 };
 
 

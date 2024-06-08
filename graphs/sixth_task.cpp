@@ -1,7 +1,7 @@
 #include "sixth_task.h"
 #include "ui_sixth_task.h"
 #include "graph.h"
-
+#include "designer.h"
 
 
 
@@ -10,6 +10,12 @@ Sixth_task::Sixth_task(QWidget *parent) : QWidget(parent), ui(new Ui::Sixth_task
     ui->setupUi(this);
 
     setup();
+
+    designer::edit_buttons(ui->clear_button);
+    designer::edit_buttons(ui->send_matrix);
+
+    designer::edit_input(ui->textEdit);
+    designer::edit_plain_input(ui->plainTextEdit);
 
 }
 
@@ -21,6 +27,8 @@ void Sixth_task::setup()
 
     ans->append(matrix);
     ui->textEdit->setText(*ans);
+
+    graph::draw_graph(graph::parse_string_to_matrix(matrix));
 }
 
 
